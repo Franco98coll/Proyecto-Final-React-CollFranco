@@ -1,0 +1,52 @@
+.imagen{
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
+}
+.card{
+    width: 18rem;
+    height: 20rem;
+    margin: 1rem;
+}
+.boton-card{
+    border: none;
+    background-color: #19181B;
+    width: 7rem;
+    font-size: 12px;
+}
+.boton-card:hover{
+    background-color: #2E2D32;
+}
+
+.card-body{
+    background-color: #CCCACF;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-title{
+    text-align: center;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 450px) {
+    .card{
+        margin-left: 40px;
+    }
+}
+@media only screen and (max-width: 360px) {
+    .card{
+        margin-left: 25px;
+    }
+}
+@media only screen and (max-width: 320px) {
+    .card{
+        margin-left: 15px;
+        width: 16rem;
+    }
+}

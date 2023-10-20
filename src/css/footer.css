@@ -1,0 +1,42 @@
+.alinear-footer{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    display: flex;
+    background-color: rgb(75, 72, 72);
+    justify-content: space-between;
+    align-items: center;
+}
+.img-footer{
+    height: 100px;
+    margin-right: -100px;
+}
+.redes{
+    width: 30px;
+    color: black;
+    margin-right: 100px;
+}
+.text-center{
+    text-align: center;
+    color: black;
+    font-weight: 500;
+}
+
+
+@media only screen and (max-width: 450px) {
+    .alinear-footer{
+        flex-direction: column;
+    }
+    .img-footer{
+        margin-right: 0px;
+    }
+    .redes{
+        margin-right: 0px;
+    }
+    .text-center{
+        margin-top: 10px;
+    }
+}

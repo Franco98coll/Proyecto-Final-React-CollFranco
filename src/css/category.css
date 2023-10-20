@@ -1,0 +1,16 @@
+.centrar{
+    display: flex;
+    flex-direction: column  ;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 40px;
+}
+.categoria{
+    background-color: #2E2D32;
+    color: black;
+    font-weight: 800;
+    background-image: url(https://i.postimg.cc/pTbc5hRd/Corona-White-01.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}

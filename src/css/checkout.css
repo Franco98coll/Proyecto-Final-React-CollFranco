@@ -1,0 +1,213 @@
+.checkout-modal h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+.checkout-modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.checkout-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.checkout-form input{
+    background-color: #d4d4d6;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+    height: 30px;
+    padding-left: 10px;
+}
+.checkout-form button{
+    color: white;
+    border-radius: 10px;
+    width: 300px;
+    height: 30px;
+    background-color: #2E2D32;
+    border: none;
+    font-weight: 800;
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.checkout-form button:hover{
+    background-color: #19181B;
+}
+
+.checkout-form input::placeholder{
+    font-weight: 500;
+    font-size: 1rem;
+}
+.checkout-form label{
+    font-weight: 700;
+    font-size: 1rem;
+}
+.resumen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+.total-check{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.btn-cerrar{
+    position: absolute;
+    top: 17px;
+    right: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: -1rem;
+    background-color: #2E2D32;
+    color: white;
+    border: none;
+    font-weight: 700;
+}
+.agradecimiento{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.agradecimiento p{
+    margin-top: 50px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.agradecimiento img{
+    border-radius: 20px;
+    margin-top: 2rem;
+    width: 400px;
+}
+
+
+@media only screen and (max-width: 450px){
+    .agradecimiento{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .agradecimiento p{
+        margin-top: 50px;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    .agradecimiento img{
+        border-radius: 20px;
+        margin-top: 2rem;
+        width: 300px;
+    }
+
+}
+@media only screen and (max-width: 360px){
+    .agradecimiento{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .agradecimiento p{
+        margin-top: 50px;
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    .agradecimiento img{
+        border-radius: 20px;
+        margin-top: 2rem;
+        width: 250px;
+    }
+    .checkout-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .checkout-form input{
+        background-color: #d4d4d6;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        width: 250px;
+        height: 30px;
+        padding-left: 10px;
+    }
+    .checkout-form button{
+        color: white;
+        border-radius: 10px;
+        width: 250px;
+        height: 30px;
+        background-color: #2E2D32;
+        border: none;
+        font-weight: 800;
+        font-size: 1rem;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+}
+@media only screen and (max-width: 320px){
+    .agradecimiento{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .agradecimiento p{
+        margin-top: 50px;
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    .agradecimiento img{
+        border-radius: 20px;
+        margin-top: 2rem;
+        width: 200px;
+    }
+    .checkout-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .checkout-form input{
+        background-color: #d4d4d6;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        width: 200px;
+        height: 30px;
+        padding-left: 10px;
+    }
+    .checkout-form button{
+        color: white;
+        border-radius: 10px;
+        width: 200px;
+        height: 30px;
+        background-color: #2E2D32;
+        border: none;
+        font-weight: 800;
+        font-size: 1rem;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+}

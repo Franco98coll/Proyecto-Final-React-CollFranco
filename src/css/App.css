@@ -1,0 +1,226 @@
+html{
+    font-family: 'Archivo Black', sans-serif;
+font-family: 'Inter', sans-serif;
+}
+.imagen{
+    width: 100px;
+    height: 100px;
+}
+.imagencarrito{
+    border-radius: 10px;
+    width: 120px;
+    height: 120px;
+}
+.carrito{
+    background-image: url(https://i.postimg.cc/HkykPSVH/Corona-Black-01.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    min-height: 65vh;
+    height: 100%;
+}
+.producto{
+    height: 100%;
+}
+.alinear-count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.alinear-count button{
+    border-radius: 10px;
+    width: 35px;
+    height: 35px;
+    background-color: #19181B;
+    color: white;
+    border: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+.alinear-count span{
+    margin-top: -20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.boton-agregar{
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #19181B;
+    color: white;
+    border: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+.alinear-total{
+    color: white;
+    background-color: #19181B;
+    margin-bottom: 20px;
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.alinear-total button{
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    background-color: #2E2D32;
+    color: white;
+    border: none;
+    margin-left: 10px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
+.alinear-total h3{
+    margin-left: 40px;
+}
+.alinear-carrito{
+    border: 1px solid black;
+    color: black;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: -50px;
+    background-color: #5a595c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.alinear-carrito button{
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    background-color: #2E2D32;
+    color: white;
+    border: none;
+    margin-left: 10px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
+.alinear-carrito h3{
+    margin-left: 40px;
+}
+.titulo-carrito{
+    text-align: center;
+    width: 300px;
+}
+.no-hay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* App.css */
+
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 1); /* Cambiamos el fondo a un tono más oscuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader-container {
+    text-align: center;
+}
+
+.loader-overlay img {
+    width: 100px;
+    animation: pulse 1s infinite; /* Aplicamos la animación de pulso */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.9); /* Escala inicial ligeramente reducida */
+        opacity: 0.7; /* Opacidad inicial reducida */
+    }
+    50% {
+        transform: scale(1); /* Escala normal en la mitad de la animación */
+        opacity: 1; /* Opacidad normal en la mitad de la animación */
+    }
+    100% {
+        transform: scale(0.9); /* Escala nuevamente ligeramente reducida */
+        opacity: 0.7; /* Opacidad nuevamente reducida */
+    }
+}
+
+
+
+@media only screen and (max-width: 450px){
+    
+    .alinear-carrito{
+        border: 1px solid black;
+        color: black;
+        border-radius: 10px;
+        margin-top: 50px;
+        margin-bottom: -50px;
+        background-color: #5a595c;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .alinear-carrito button{
+        margin-top: 10px;
+        border-radius: 10px;
+        width: 200px;
+        height: 50px;
+        background-color: #2E2D32;
+        color: white;
+        border: none;
+        margin-right: 10px;
+        margin-bottom: 20px;
+    }
+    .alinear-carrito h3{
+        margin-left: 10px;
+        font-size: 20px;
+    }
+    .precio-cantidad{
+        display: none;
+    }
+    .total-producto{
+        display: none;
+    }
+    .titulo-carrito{
+        text-align: center;
+        width: 300px;
+    }
+    .alinear-total{
+        color: white;
+        background-color: #19181B;
+        margin-bottom: 20px;
+        margin-top: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .alinear-total button{
+        margin-top: 20px;
+        border-radius: 10px;
+        width: 200px;
+        height: 50px;
+        background-color: #2E2D32;
+        color: white;
+        border: none;
+        margin-left: 10px;
+        margin-right: 40px;
+        margin-bottom: 20px;
+    }
+    .alinear-total h3{
+        margin-left: 40px;
+    }
+    .no-hay{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

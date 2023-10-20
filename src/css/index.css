@@ -1,0 +1,9 @@
+.background{
+    background-color: #403F42;
+    background-image: url(../assets/img/wave.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px 400px;
+    height: 100%;
+}
+
