@@ -15,6 +15,9 @@ const Checkout = ({ isOpen, onClose, onBuy, item, cantidad }) => {
 
     const comprar = async (data) => {
         const pedido = {
+            item: item,
+            cantidad: cantidad,
+            precio: item.price * cantidad,
             cliente: data,
             productos: carrito,
             total: precioTotal(),
