@@ -3,9 +3,12 @@ import ItemCount from './ItemCount';
 import { useState } from 'react';
 import { CartContext } from '../../context/CartContext';
 import '../../css/itemDetail.css';
+import Checkout from '../Checkout';
+
 
 
 const ItemDetail = ({ item }) => {
+    const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
 
     const context = useContext(CartContext);
     const carrito = context.carrito;
@@ -57,7 +60,10 @@ const ItemDetail = ({ item }) => {
                         handleRestar={handleRestar}
                         handleSumar={handleSumar}
                         handleAgregar={() => { agregarAlCarrito(item, cantidad) }} />
-                    <button className='comprar' onClick={comprar}>Comprar</button>
+                    <button className='comprar' onClick={() => setIsCheckoutOpen(true)}>Comprar</button>
+                    {isCheckoutOpen && (
+                        <Checkout isOpen={isCheckoutOpen} onClose={() => setIsCheckoutOpen(false)} item={item} cantidad={cantidad} comprar={comprar} />
+                    )}
                 </div>
 
             </div>

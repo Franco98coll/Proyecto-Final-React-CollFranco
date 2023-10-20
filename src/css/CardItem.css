@@ -4,9 +4,20 @@
     object-position: top;
 }
 .card{
+    text-decoration: none;
+    color: #19181B;
     width: 18rem;
     height: 20rem;
     margin: 1rem;
+}
+.div-card{
+    width: 18rem;
+    height: 20rem;
+    margin: 1rem;
+}
+.card link{
+    text-decoration: none;
+    color: #19181B;
 }
 .boton-card{
     border: none;
@@ -19,6 +30,8 @@
 }
 
 .card-body{
+    object-fit: contain;
+    height: 40%;
     background-color: #CCCACF;
     padding: 0.5rem;
     display: flex;
@@ -27,6 +40,7 @@
     align-items: center;
 }
 .card-title{
+    color: #19181B;
     text-align: center;
     font-size: 1rem;
     display: flex;

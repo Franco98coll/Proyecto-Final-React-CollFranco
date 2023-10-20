@@ -6,21 +6,20 @@ import '../../css/CardItem.css';
 
 function CardItem({ item }) {
   return (
-    <Link style={{ textDecoration: 'none' }} to={`/Producto/${item.id}`}>
-      <Card className='card'>
-        <Card.Img className='imagen' variant="top" src={item.image} />
-        <Card.Body>
-          <Card.Title className='card-title' >{item.title}</Card.Title>
-          <Card.Text>
-            {item.desription}
-          </Card.Text>
-          <Link style={{ textDecoration: 'none' }} to={`/Producto/${item.id}`}>
+    <div className='div-card'>
+      <Link style={{ textDecoration: 'none' }} to={`/Producto/${item.id}`}>
+        <Card className='card'>
+          <Card.Img className='imagen' variant="top" src={item.image} />
+          <Card.Body>
+            <Card.Title className='card-title' >{item.title}</Card.Title>
+            <Card.Text>
+              {item.desription}
+            </Card.Text>
             <Button className='boton-card' variant="primary">Ver Producto</Button>
-          </Link>
-        </Card.Body>
-      </Card>
-    </Link>
-
+          </Card.Body>
+        </Card>
+      </Link>
+    </div>
   );
 }
 

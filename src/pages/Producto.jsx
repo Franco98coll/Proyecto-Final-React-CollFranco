@@ -1,7 +1,7 @@
 import React from 'react'
 import ItemDetailContainer from '../components/item/ItemDetailContainer'
 import { useParams } from 'react-router-dom'
-import '../css/app.css'
+import '../css/App.css'
 
 
 const Producto = () => {

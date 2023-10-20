@@ -2,14 +2,16 @@ import React, { useContext, useState } from 'react';
 import { CartContext } from '../context/CartContext';
 import { useForm } from 'react-hook-form';
 import { collection, addDoc } from 'firebase/firestore';
-import { db } from '../firebase/config';
+import { db } from '../Firebase/config';
 import Modal from 'react-modal';
-import '../css/Checkout.css'
+import '../css/checkout.css'
 
-const Checkout = ({ isOpen, onClose, onBuy }) => {
+const Checkout = ({ isOpen, onClose, onBuy, item, cantidad }) => {
     const [pedidoId, setPedidoId] = useState(null); // Cambia el estado inicial de pedidoId a null
     const { carrito, precioTotal, vaciarCarrito } = useContext(CartContext); // Agrega vaciarCarrito al contexto
     const { register, handleSubmit } = useForm();
+
+
 
     const comprar = async (data) => {
         const pedido = {
@@ -29,9 +31,7 @@ const Checkout = ({ isOpen, onClose, onBuy }) => {
 
         const whatsappMessage = generarMensaje(pedido);
         enviarMensajeWhatsApp(whatsappMessage);
-        onBuy(); // Realiza la acción de compra, por ejemplo, vaciar el carrito
-
-        // No cierres el modal aquí para que puedas mostrar el ID del pedido y un mensaje de agradecimiento
+        vaciarCarrito();
     };
 
     const enviarMensajeWhatsApp = (mensaje) => {
@@ -47,14 +47,19 @@ const Checkout = ({ isOpen, onClose, onBuy }) => {
         let precioTotal = 0;
 
         pedido.productos.forEach((prod) => {
-            const tituloProducto = prod.title.replace(' ', '%20');
+            const tituloProducto = prod.title.replace('%20');
             message += `${tituloProducto} x ${prod.cantidad} unidades - `;
-
             const precioProducto = prod.price * prod.cantidad;
             precioTotal += precioProducto;
         });
 
-        message += `Precio Total: $${precioTotal.toFixed(2)}`;
+        if (item) {
+            const tituloItem = item.title.replace(' ', '%20');
+            const precioItem = item.price * cantidad;
+            message += `${tituloItem} x ${cantidad} unidades - ${precioItem} - `;
+        }
+
+        message += `Precio Total: $${(precioTotal + (item ? item.price * cantidad : 0)).toFixed(2)}`;
         return encodeURIComponent(message);
     };
 
@@ -93,12 +98,17 @@ const Checkout = ({ isOpen, onClose, onBuy }) => {
                                         {producto.title} x {producto.cantidad} - ${producto.price * producto.cantidad}
                                     </li>
                                 ))}
+                                {item ? (
+                                    <li>
+                                        {item.title} x {cantidad} - ${item.price * cantidad}
+                                    </li>
+                                ) : null}
                             </ul>
-                            <p className='total-check'>Total: ${precioTotal()}</p>
+                            <p className='total-check'>Total: ${precioTotal() + (item ? item.price * cantidad : 0)}</p>
+
                         </div>
                     )}
                 </div>
-                {/* Cierra el modal solo cuando se muestre el mensaje de agradecimiento */}
             </Modal>
         </div>
     );

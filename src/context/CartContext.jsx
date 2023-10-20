@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
+
 export const CartContext = createContext();
 
 const carritoInicial = JSON.parse(localStorage.getItem('carrito')) || [];
@@ -22,18 +23,30 @@ export const CartProvider = ({ children }) => {
             if (cantidad <= stockDisponible) {
                 estaEnElCarrito.cantidad += cantidad;
                 setCarrito(nuevoCarrito);
+                // Mostrar notificación Toastify de éxito
+                toast.success('Producto agregado al carrito', {
+                    position: toast.POSITION.TOP_RIGHT,
+                    autoClose: 1500, // Duración de 3 segundos (3000 ms)
+                });
             } else {
                 toast.error('No hay suficiente stock disponible para este producto.', {
                     position: toast.POSITION.TOP_RIGHT,
+                    autoClose: 2000,
                 });
             }
         } else {
             if (cantidad <= itemAgregado.stock) {
                 nuevoCarrito.push(itemAgregado);
                 setCarrito(nuevoCarrito);
+                // Mostrar notificación Toastify de éxito
+                toast.success('Producto agregado al carrito', {
+                    position: toast.POSITION.TOP_RIGHT,
+                    autoClose: 1500, // Duración de 3 segundos (3000 ms)
+                });
             } else {
                 toast.error('No hay suficiente stock disponible para este producto.', {
                     position: toast.POSITION.TOP_RIGHT,
+                    autoClose: 2000,
                 });
             }
         }
@@ -64,13 +77,16 @@ export const CartProvider = ({ children }) => {
             }
         }
     };
+    const vaciarCarrito = () => {
+        setCarrito([]);
+    }
 
     useEffect(() => {
         localStorage.setItem('carrito', JSON.stringify(carrito));
     }, [carrito]);
 
     return (
-        <CartContext.Provider value={{ carrito, agregarAlCarrito, cantidadEnCarrito, precioTotal, eliminarDelCarrito }}>
+        <CartContext.Provider value={{ carrito, agregarAlCarrito, cantidadEnCarrito, precioTotal, eliminarDelCarrito, vaciarCarrito }}>
             {children}
         </CartContext.Provider>
     );

@@ -5,10 +5,13 @@ import { Route, Routes } from 'react-router-dom';
 import Inicio from './pages/Inicio';
 import Cart from './pages/Cart';
 import Producto from './pages/Producto';
-import Category from './pages/category';
+import Category from './pages/Category';
 import { CartProvider } from './context/CartContext';
-import Footer from './components/footer';
 import { ToastContainer } from 'react-toastify';
+import Footer from './components/FOOTER/Footer';
+
+
+
 
 
 
